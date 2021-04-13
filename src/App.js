@@ -1,13 +1,25 @@
+import React from 'react';
 import './App.css';
+import NavBar from './Components/Navbar'
+import Herotext from './Components/Herotext'
 
-function App() {
-  return (
-    <div className="App">
-      <div className="container">
-      
+class App extends React.Component {
+  constructor() {
+    super();
+
+
+
+  }
+
+
+  render() {
+    return (
+      <div className="App" >
+        <NavBar />
+        <Herotext />
       </div>
-    </div>
-  );
-}
 
+    );
+  }
+}
 export default App;
