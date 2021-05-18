@@ -1,25 +1,37 @@
 import React from 'react';
 import './App.css';
 import NavBar from './Components/Navbar'
-import Herotext from './Components/Herotext'
+import Portfolio from './Components/Portfolio'
+import LandingPage from './Components/LandingPage'
+import About from './Components/About'
+import { Router } from 'react-router';
+import {
+  Route,
+} from 'react-router-dom'
+import history from "./history";
 
-class App extends React.Component {
-  constructor() {
-    super();
+export default function App() {
+  
 
 
 
-  }
-
-
-  render() {
+  
     return (
-      <div className="App" >
-        <NavBar />
-        <Herotext />
+      <div className="App">
+        <Router history={history}>
+          <NavBar />
+          <Route exact={true} path="/">
+            <LandingPage />
+          </Route>
+          <Route path="/about">
+              <About />
+            </Route>
+          <Route path="/portfolio">
+              <Portfolio />
+            </Route>
+        </Router>
       </div>
 
     );
   }
-}
-export default App;
+
